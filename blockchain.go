@@ -8,7 +8,7 @@ type BlockChain struct {
 // AddBlock saves provided data as a block in the blockchain
 func (blockchain *BlockChain) AddBlock(data string) {
 	prevBlock := blockchain.blocks[len(blockchain.blocks)-1]
-	newBlock := NewBlock(data, prevBlock.PrevBlockHash)
+	newBlock := NewBlock(data, prevBlock.Hash)
 	blockchain.blocks = append(blockchain.blocks, newBlock)
 }
 
